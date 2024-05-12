@@ -1,0 +1,18 @@
+
+<?php
+include "db.php";
+$id = $_GET['id'];
+
+$sql = "DELETE FROM `gkb_md_admin` WHERE `id`= '$id' ";
+$execute = mysqli_query($conn, $sql);
+
+if ($execute) {
+    echo "
+<script type='text/javascript'>
+    alert('sucess');
+</script>";
+header("location:view_md.php");
+} else {
+    echo "Unable to Delete";
+}
+?>
